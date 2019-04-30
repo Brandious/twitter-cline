@@ -55,8 +55,7 @@
                 echo "<p><a class='toggleFollow' data-userID='".$row['userid']."'>";
                 
                 
-                $isFollowingQuery = "SELECT * FROM isFollowing WHERE follower =".  $_SESSION['ID']." AND isFollowing = ".
-                $row['userid']." LIMIT 1";
+                $isFollowingQuery = "SELECT * FROM isFollowing WHERE follower=".$_SESSION['ID']." AND isFollowing =".$row['userid']." LIMIT 1";
         
                 $isFollowingQueryResult = $this->connect()->query($isFollowingQuery);
                 

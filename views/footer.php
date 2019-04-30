@@ -81,7 +81,7 @@
                           // console.log(result == " 1");
                           if(result == " 1")
                           { 
-                             window.location.assign("/twitter-clone/index.php");
+                             window.location.assign("/index.php");
                           }
                           else 
                           {
