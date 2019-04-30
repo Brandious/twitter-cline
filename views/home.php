@@ -11,7 +11,6 @@
         <?php displaySearch(); ?> 
         <hr> 
         <?php displayTweetBox(); ?> 
-        
     </div>
 
     </div>
