@@ -55,15 +55,21 @@
                 echo "<p><a class='toggleFollow' data-userID='".$row['userid']."'>";
                 
                 
-                $isFollowingQuery = "SELECT * FROM isFollowing WHERE follower=".$_SESSION['ID']." AND isFollowing =".$row['userid']." LIMIT 1";
-        
-                $isFollowingQueryResult = $this->connect()->query($isFollowingQuery);
-                
-                if($isFollowingQueryResult->rowCount()>0) 
-                    echo "Unfollow";
-                else
-                    echo "Follow";
+                if($_SESSION["ID"])
+                {
+                    $isFollowingQuery = "SELECT * FROM isFollowing WHERE follower=".$_SESSION['ID']." AND isFollowing =".$row['userid']." LIMIT 1";
                     
+                    $isFollowingQueryResult = $this->connect()->query($isFollowingQuery);
+                    
+                    if($isFollowingQueryResult->rowCount()>0) 
+                        echo "Unfollow";
+                    else
+                        echo "Follow";
+                }
+                else 
+                {
+                    echo "Please login to follow";
+                }                        
 
                 echo "</a></p></div>";
             }
