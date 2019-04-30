@@ -9,13 +9,14 @@
        
 
         // mysql://b9ff5642ee091a:a01a0c5c@eu-cdbr-west-02.cleardb.net/heroku_1811ddbbc9d6917?reconnect=true
-
+        private $cleardb_url;
         public function connect()
         {
-            $this->servername = "eu-cdbr-west-02.cleardb.net/heroku_1811ddbbc9d6917";
-            $this->username = "b9ff5642ee091a";
-            $this->password = "a01a0c5c";
-            $this->dbname = "twitter";
+            $cleardb_url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $this->servername = $cleardb_url["host"];
+            $this->username = $cleardb_url["user"];
+            $this->password = $cleardb_url["pass"];
+            $this->dbname = substr($cleardb_url["path"],1);
             
             try
             {
