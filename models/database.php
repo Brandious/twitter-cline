@@ -7,11 +7,14 @@
         private $password;
         private $dbname;
        
+
+        // mysql://b9ff5642ee091a:a01a0c5c@eu-cdbr-west-02.cleardb.net/heroku_1811ddbbc9d6917?reconnect=true
+
         public function connect()
         {
-            $this->servername = "localhost";
-            $this->username = "brandious";
-            $this->password = "helloworld";
+            $this->servername = "eu-cdbr-west-02.cleardb.net/heroku_1811ddbbc9d6917";
+            $this->username = "b9ff5642ee091a";
+            $this->password = "a01a0c5c";
             $this->dbname = "twitter";
             
             try
