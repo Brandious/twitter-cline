@@ -44,8 +44,7 @@
             {
                $userResult = $user->insertUser($_POST['email'],$_POST['password']);
 
-               if(!$userResult)
-                 $error = "Couldnt create user...";
+              
          
             }
            
